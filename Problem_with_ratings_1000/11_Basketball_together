@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	long long N, D;
+	cin >> N >> D;
+	
+	vector<long long> arr(N);
+	
+	for(int i=0; i<N; i++) cin >> arr[i];
+	
+	sort(arr.begin(), arr.end(), greater<long long>());
+	
+	long long i = 0;  
+	long long team =0;
+	long long cnt=0;
+	long long score = 0;
+	
+	while(cnt < N && i < N){       
+	    
+	    score += arr[i];   
+	    cnt++;             
+	    //cout<< score << endl;
+	    
+	    if(score > D){  
+	        team++;        
+	        score = 0;     
+	        i++;           
+	    }
+	    
+       if(cnt == N) break;
+	    
+	}
+	
+	cout<< team << endl;
+	
+
+}
